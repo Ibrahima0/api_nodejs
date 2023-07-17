@@ -1,0 +1,16 @@
+.left-page{
+    border: solid;
+    width: 50%;
+    height: 100vh;
+}
+.ime{
+    width: 100%;
+    height: 100%;
+}
+.pages{
+    display: flex;
+}
+.right-page{
+    padding: 40px;
+    max-width: 50%;
+}

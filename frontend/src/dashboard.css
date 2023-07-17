@@ -1,0 +1,65 @@
+.header2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+.header2 a{
+    text-decoration: none;
+    background-color: brown;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+.main2{
+    width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: solid 1px gray;
+}
+td,th{
+    text-align: left;
+    padding: 10px 5px;
+}
+.add{
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.edit{
+    padding: 5px 10px;
+    background-color: rgb(0, 0, 110);
+    color: white;
+    cursor: pointer;
+}
+.delete{
+    padding: 5px 10px;
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+}
+.form2 button{
+    background-color: green;
+    color: white;
+    padding: 5px 20px;
+    margin-top: 20px;
+}
+.form2 div{
+    margin: 5px;
+}
+.form2 div input{
+    width: 280px;
+}
+tr:nth-child(odd){
+    background-color: rosybrown;
+}
+tr{
+    background-color: antiquewhite;
+}
