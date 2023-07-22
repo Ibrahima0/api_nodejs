@@ -122,3 +122,13 @@ body{
   color: white;
   cursor: pointer;
 }
+.toPage{
+  text-decoration: none;
+  color: black;
+}
+.modif{
+  background-color: rgb(0, 0, 101);
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+}

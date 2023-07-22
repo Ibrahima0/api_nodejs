@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ()=>{
+const Card = ({nom,description})=>{
     return(
         <>
             <div className="card">
@@ -10,8 +10,8 @@ const Card = ()=>{
                 </div>
                 <div className="card-body">
                     <img src="/im1.jpg"/>
-                    <h2 className="desc">titre</h2>
-                    <div className="desc">une breve description du site un petit truc</div>
+                    <h2 className="desc">{nom}</h2>
+                    <div className="desc">{description}</div>
                 </div>
                 <div className="card-footer">
                     <div>
