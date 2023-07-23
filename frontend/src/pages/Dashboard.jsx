@@ -98,7 +98,7 @@ const Dashboard = ()=>{
                 <button className="add" onClick={openClose}>{changeName}</button>
                     {addEdit && (
                         <div>
-                            <form  className="form2"  onSubmit={(e)=> updateItem(e)}>
+                            <form  className="form2"  onSubmit={(e)=> addItem(e)}>
                                 <h1>Ajouter</h1>
                                 <div>
                                     <input type="text" placeholder="nom" onChange={(e)=> setNomText(e.target.value)} value={nomText}/>
