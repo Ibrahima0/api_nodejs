@@ -1,4 +1,7 @@
+const Recette = require("../model/recette");
 const Utilisateur = require("../model/utilisateur");
+const bcrypt = require("bcrypt");
+const jwtGenerator = require("../utils/jwtGenerator");
 
 const ajouterUtilisateur = async (req, res) => {
   try {
@@ -10,12 +13,16 @@ const ajouterUtilisateur = async (req, res) => {
         .json({ error: "Tous les champs doivent être remplis" });
     }
 
-    const utilisateur = new Utilisateur({
-      noms,
-      adresse,
-      telephone,
-      email,
-      password,
+    const saltRound = 10;
+    const salt = await bcrypt.genSalt(saltRound);
+    const bcryptPassword = await bcrypt.hash(password,salt);
+
+    const utilisateur = Utilisateur({
+      noms: noms,
+      adresse: adresse,
+      telephone: telephone,
+      email: email,
+      password: bcryptPassword,
     });
 
     const result = await utilisateur.save();
@@ -23,6 +30,39 @@ const ajouterUtilisateur = async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
+  }
+};
+
+const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res
+        .status(400)
+        .json({ error: "Tous les champs doivent être remplis" });
+    }
+
+    // Assurez-vous d'avoir importé le modèle "Utilisateur" depuis MongoDB
+    // et qu'il représente votre schéma de collection d'utilisateurs.
+    const user = await Utilisateur.findOne({ email: email });
+
+    if (!user) {
+      return res.status(401).json({ error: "Ce compte n'existe pas" });
+    }
+
+    const validPassword = await bcrypt.compare(password, user.password);
+
+    if (!validPassword) {
+      return res.status(401).json({ error: "Mot de passe ou email incorrect" });
+    }
+
+    const token = jwtGenerator(user._id);
+
+    res.status(200).json(token);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Une erreur s'est produite lors de la connexion" });
   }
 };
 
@@ -131,4 +171,5 @@ module.exports = {
   modificationUtilisateur,
   supprimerUtilisateur,
   validerUtilisateur,
+  login
 };
