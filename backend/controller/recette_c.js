@@ -1,5 +1,6 @@
 const Recette = require("../model/recette");
 
+
 const ajouterRecette = async (req, res) => {
   try {
     const { nom, description, ingrédients, instructions } = req.body;
