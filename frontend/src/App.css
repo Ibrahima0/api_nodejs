@@ -1,41 +1,51 @@
 .header{
-  background-color: rgb(184, 56, 56);
+  background-color: orange;
   display: flex;
   justify-content: space-between;
   padding: 25px 50px;
-  color: white;
+  color: rgb(0, 0, 0);
+  align-items: center;
 }
 body{
   background-color: #eee;
 }
 .title{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: cursive;
   font-weight: bold;
+  font-size: 30px;
 }
 .header a{
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: bold;
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
+  background-color: brown;
+  padding: 5px 10px;
+  border-radius: 6px;
 }
+
 .main{
   display: flex;
   justify-content: space-between;
   margin: 20px 50px;
   height: 100vh;
 }
-.left{
+.left1{
   border-radius: 5px;
   width: 250px;
   height: 200px;
   background-color: #fff;
   box-shadow: 1px 1px 1px 1px gray;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  margin-bottom: 20px;
 }
+.left2{
+  border-radius: 5px;
+  width: 250px;
+  height: 500px;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px gray;
+  margin-bottom: 20px;
+}
+
 .right{
   width: 250px;
   display: flex;
@@ -59,6 +69,7 @@ body{
   margin: 0 100px;
   border-radius: 5px;
   margin-bottom: 20px;
+  border-radius: 6px;
 }
 .card-header{
   display: flex;
@@ -102,6 +113,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: brown;
 }
 .form input{
   margin-bottom: 10px;
@@ -131,4 +143,21 @@ body{
   padding: 5px 10px;
   color: white;
   cursor: pointer;
+}
+.pi{
+  
+  animation: burger 3s ease infinite;
+}
+
+@keyframes burger {
+  50%{
+    transform: translateY(-20px);
+  }
+  90%{
+    transform: translateY(0px);
+  }
+}
+.nb_recette{
+  animation: burger 3s ease infinite;
+  font-size: 50px;
 }

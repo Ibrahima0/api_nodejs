@@ -11,7 +11,7 @@ const Card = ({nom,description})=>{
                 <div className="card-body">
                     <img src="/im1.jpg"/>
                     <h2 className="desc">{nom}</h2>
-                    <div className="desc">{description}</div>
+                    
                 </div>
                 <div className="card-footer">
                     <div>

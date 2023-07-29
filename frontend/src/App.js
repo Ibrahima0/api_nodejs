@@ -32,20 +32,24 @@ function App() {
       </header>
 
       <main className="main">
-        <div className="left"><img className='burger' height="70px" src="/pizza2.jpg"/></div>
+        <div className='left-parent'>
+          <div className="left1">
+            <img className='burger' height="70px" src="/pizza2.jpg"/>
+          </div>
+          <div className="left2">
+            <img className='burger' height="70px" src="/promo.jpg"/> 
+          </div>
+        </div>
         <div className="center">
             {
               (listRecettes.map((listRecette)=>(
                 <Link className='toPage' to={`/page/${listRecette._id}`}><Card key={listRecette._id} nom={listRecette.nom} description={listRecette.description} /></Link>
               )))
             }
-          
-          
-
         </div>
         <div className="right">
           <div className="top">
-            <h2>{listRecettes.length}</h2>
+            <h2 className='nb_recette'>{listRecettes.length}</h2>
             <p className='recette'>recettes</p>
           </div>
           <div className="bottom">

@@ -7,9 +7,13 @@
 .header2 a{
     text-decoration: none;
     background-color: brown;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 5px 10px;
+    border-radius: 6px;
     color: white;
+}
+.header2 a:hover{
+    transition: 1s;;
+    transform: translateY(-2px);
 }
 .main2{
     width: 900px;
@@ -21,6 +25,7 @@ table{
     border-collapse: collapse;
     border-spacing: 0;
     border: solid 1px gray;
+    border-radius: 6px;
 }
 td,th{
     text-align: left;
@@ -48,18 +53,27 @@ td,th{
 .form2 button{
     background-color: green;
     color: white;
-    padding: 5px 20px;
+    padding: 5px 50px;
     margin-top: 20px;
+    cursor: pointer;
 }
 .form2 div{
     margin: 5px;
 }
 .form2 div input{
-    width: 280px;
+    width: 580px;
+    height: 30px;
+    border-radius: 6px;
 }
 tr:nth-child(odd){
-    background-color: rosybrown;
+    background-color: rgb(221, 221, 221);
+    font-weight: bold;
 }
 tr{
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+tr:nth-child(1){
+    background-color: brown;
+    color: white;
 }
